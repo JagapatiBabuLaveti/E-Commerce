@@ -1,4 +1,4 @@
-package com.online.model;
+package com.online.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,6 +24,8 @@ public class UserRegister {
 	private String name;
 	@Column(name="email_col")
 	private String email;
+	@Column(name="password_col")
+	private String password;
 	@Column(name="contact_col")
 	private String contact;
 
