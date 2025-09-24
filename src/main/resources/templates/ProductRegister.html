@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymeleaf.org">
+	<head>
+		<body>
+			<h3>PRODUCT REGISTER</h3>
+			<form action="saveProduct" method="post">
+				Name :<input type="text" name="name">
+				Description :<textarea name="description"></textarea>
+				PRICE :<input type="number" name="price">
+				QUANTITY :<input type="number" name="quantity">
+				<label for="category">CATEGORY</label>
+				<select name="category">
+					<option value="SELECT">SELECT</option>
+				</select>
+				BRAND :<input type="text" name="brand">	
+				<input type="submit" value="Submit">		
+			</form>
+			<span th:text="${productMessage}"></span>
+		</body>
+	</head>
+</html>
