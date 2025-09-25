@@ -30,6 +30,6 @@ public class UserRegister {
 	@Column(name="password_col")
 	private String password;
 	@Column(name="contact_col")
-	private Long contact;
+	private Long contactId;
 
 }

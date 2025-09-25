@@ -1,8 +1,9 @@
 package com.online.service;
 
 import com.online.Entity.UserRegister;
+import com.online.dto.UserRequestDto;
 
 public interface IUserRegisterService {
 
-	String insertUserRegister(UserRegister userRegister);
+	UserRegister insertUserRegister(UserRequestDto userRequestDto);
 }
