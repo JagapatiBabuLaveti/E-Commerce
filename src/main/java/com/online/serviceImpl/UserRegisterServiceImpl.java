@@ -15,16 +15,15 @@ public class UserRegisterServiceImpl implements IUserRegisterService{
 
 	@Autowired
 	private IUserRegisterRepository userRepo;
-	@Autowired
-	private UserRegister userRegister;
-	
+
 	@Override
 	public UserRegister insertUserRegister(UserRequestDto userRequestDto) {
+		UserRegister userRegister = new UserRegister();
 		try {
 			userRegister.setName(userRequestDto.getName());
 			userRegister.setEmail(userRequestDto.getEmail());
-			userRegister.setPassword(Base64.getEncoder().encodeToString(userRequestDto.getPassword().getBytes()));
 			userRegister.setContactId(userRequestDto.getContactId());
+			userRegister.setPassword(Base64.getEncoder().encodeToString(userRequestDto.getPassword().getBytes()));
 			userRepo.save(userRegister);
 			
 		}catch (Exception e) {

@@ -1,19 +1,18 @@
 package com.online.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NonNull;
 
 @Data
 @AllArgsConstructor
+
 public class UserRequestDto {
-	@NonNull
+	private String id;
+	@Schema(name = "User", description = "Represents a user in the system")
 	private String name;
-	@NonNull
 	private String email;
-	@NonNull
 	private String password;
-	@NonNull
 	private Long contactId;
 
 }

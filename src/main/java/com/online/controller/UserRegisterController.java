@@ -14,10 +14,22 @@ import com.online.model.ResponseMessage;
 import com.online.service.IUserRegisterService;
 import com.online.util.Constrants;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
+@Tag(name = "User Controller", description = "APIs for managing users")
 public class UserRegisterController {
 	@Autowired
 	private IUserRegisterService userRegisterService;
+	
+    @Operation(summary = "Create a new user", description = "Adds a new user to the system")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "User created successfully"),
+        @ApiResponse(responseCode = "400", description = "Invalid input")
+    })
 	@PostMapping("/userregister")
 	public ResponseEntity<ResponseMessage> createRegister(@RequestBody UserRequestDto userRequestDto){
 		if(userRequestDto.getEmail()==null||userRequestDto.getEmail().isEmpty()||userRequestDto.getPassword()==null||userRequestDto.getPassword().isEmpty()) {
